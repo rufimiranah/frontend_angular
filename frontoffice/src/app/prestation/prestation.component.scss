@@ -1,0 +1,123 @@
+.body{
+    font-family: "EB Garamond", serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+}
+.titre {
+    // <uniquifier>: Use a uniquifier for the class name
+        // <weight>: Use a value from 400 to 800
+    
+            font-family: "EB Garamond", serif;
+            font-optical-sizing: auto;
+            font-weight: 500px;
+            font-style: normal;
+};
+.service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 200px;
+    margin-right: 200px;
+    overflow-y: auto;
+    
+}
+/*.sousPrestation{
+font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    //font-weight: <weight>;
+    font-style: normal;
+}*/
+/* Pour alterner la couleur de fond */
+.service-card:nth-child(odd) {
+    background-color: white;
+    /* Ou n'importe quelle autre couleur de fond pour la carte impaire */
+}
+.service-card {
+    background-color: #D8C4A8;
+        /* Autres styles de votre carte */
+    /* Pour obtenir deux cartes par ligne avec un espacement entre elles */
+    margin-bottom: 20px;
+   
+    width: 300px;
+        /* Largeur de la carte */
+        height: 350px;
+    transition: border 0.3s;
+}
+.selected {
+    border: 2px solid black;
+    /* Ajouter une bordure noire quand la carte est sélectionnée */
+}
+.alternate-color {
+    background-color:#D8C4A8;
+}
+.service-card img {
+    max-width: 100%;
+    /* Les images ne dépasseront pas la largeur de la carte */
+    height: auto;
+    /* La hauteur des images s'ajustera automatiquement */
+    display: block;
+    /* Pour éviter les espaces supplémentaires sous les images */
+    margin-bottom: 10px;
+    /* Ajouter un espace entre l'image et le texte */
+}
+.service-card img {
+    width: 100px;
+    /* Définir la largeur souhaitée */
+    height: 100px;
+    /* Définir la hauteur souhaitée */
+    object-fit: cover;
+    /* Permet de redimensionner l'image tout en préservant son aspect ratio */
+    border-radius: 50%;
+    /* Pour arrondir les coins et obtenir une forme circulaire */
+}
+.sous-prestations-list {
+    list-style: none;
+    padding: 0;
+}
+
+.sous-prestation-item {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+}
+
+.sous-prestation-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-rendezvous {
+    margin-top: 10px;
+    background-color: #D8C4A8;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.btn-rendezvous:hover {
+    background-color: #000000;
+}
+.btn-rendezvous.in-cart {
+    background-color: green;
+}
+.sous-prestation-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.delai {
+    margin: 0;
+}
+
+.prix {
+    margin: 0;
+}
+
+.sous-prestation-item {
+    margin-left: 400px;
+    margin-right: 400px;
+}

@@ -1,0 +1,60 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+/>
+
+<app-navbar></app-navbar>
+<body>
+  <h1 class="titre">Carte des soins</h1>
+
+  <div class="service-cards">
+    <div
+      class="service-card"
+      *ngFor="let prestation of prestations; let i = index"
+      (click)="selectPrestation(prestation)"
+      [class.selected]="prestation === selectedPrestation"
+      [class.alternate-color]="i % 2 !== 0"
+    >
+      <img [src]="images[i]" alt="{{ prestation.libelle_service }}" />
+      <h2>{{ prestation.libelle_service }}</h2>
+      <p class="service-description">{{ prestation.description_service }}</p>
+    </div>
+  </div>
+
+  <div class="sousPrestation" *ngIf="selectedPrestation">
+    <div *ngIf="sousPrestations">
+      <ul class="sous-prestations-list">
+        <li
+          *ngFor="let sousPrestation of sousPrestations"
+          class="sous-prestation-item"
+        >
+          <h2 style="font-weight: bold">{{ sousPrestation.libelle_detail }}</h2>
+          <div class="sous-prestation-description">
+            <p>{{ sousPrestation.description_detail }}</p>
+            <button
+              class="btn-rendezvous"
+              [class.in-cart]="sousPrestation.inCart"
+              (click)="addToCart(sousPrestation)"
+            >
+              Prendre rendez-vous
+            </button>
+          </div>
+          <div class="sous-prestation-footer">
+            <p class="delai" style="font-weight: bold">
+              {{ convertMinutesToHours(sousPrestation.delai_detail) }}
+            </p>
+            <p class="prix" style="font-weight: bold">
+              {{ sousPrestation.prix_detail }} Ariary
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>

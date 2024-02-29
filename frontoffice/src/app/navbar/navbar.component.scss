@@ -1,0 +1,71 @@
+.header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* Align items vertically */
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    background-position: center;
+   
+}
+
+.logo {
+    margin-left: auto;
+    /* Move logo to the right */
+    margin-right: auto;
+    /* Move logo to the left */
+    margin-bottom: 20px;
+    /* Add space below logo */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center items horizontally */
+    background-color: transparent;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 10px;
+    color: black;
+}
+
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 100px;
+}
+
+.nav-list li {
+    display: inline-block;
+    margin-right: 30px;
+    /* Adjust spacing between items */
+    margin-left: 30px;
+}
+
+.nav-list li:last-child {
+    margin-right: 0;
+    /* Remove margin from last item */
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #000000;
+    /* Change color of navigation links */
+    font-weight: bold;
+    /* Add font weight as needed */
+    font-size: 20px;
+    /* Add font size as needed */
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.nav-list li a:hover {
+    color: #ccc;
+    /* Change color on hover */
+}
+
+.nav-list ul {
+    margin-left: 150 px;
+}

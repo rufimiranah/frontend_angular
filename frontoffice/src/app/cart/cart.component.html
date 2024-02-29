@@ -1,0 +1,167 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Slab:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+  rel="stylesheet"
+/>
+
+<app-navbar></app-navbar>
+<body>
+  <div class="card-container">
+    <form>
+      <div class="row">
+        <div class="col-md-6" style="margin-top: 30px">
+          <div class="section1">
+            <div class="employe">
+              <p
+                style="
+                  font-weight: 900;
+                  font-size: large;
+                  text-align: left;
+                  margin-left: 10px;
+                "
+              >
+                Séléctionnez une employée
+              </p>
+
+              <div class="custom-select" style="text-align: left">
+                <img
+                  src="../../assets/images/Icone.png"
+                  alt="Icône personne"
+                  class="select-icon"
+                  style="height: 50px; width: 40px"
+                />
+                <select
+                  id="employeSelect"
+                  name="employe"
+                  [(ngModel)]="selectedEmploye"
+                  (change)="onEmployeChange($event)"
+                >
+                  <option style="font-weight: bold" disabled selected hidden>
+                    Choisissez un employé
+                  </option>
+                  <option
+                    style="font-weight: bold"
+                    *ngFor="let employe of employes"
+                    [ngValue]="employe"
+                  >
+                    {{ employe.name }}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="rdv">
+              <p
+                style="
+                  font-weight: 900;
+                  font-size: large;
+                  text-align: left;
+                  margin-top: 30px;
+                  margin-left: 10px;
+                "
+              >
+                Séléctionnez une date
+              </p>
+              <p-calendar
+                [(ngModel)]="selectedDate"
+                (onSelect)="onDateChange($event)"
+                [minDate]="minDate"
+                [inline]="true"
+                [showWeek]="true"
+                name="selectedDate"
+              ></p-calendar>
+              <!--Ici les horaires disponibles en liste (li)-->
+              <p
+                style="
+                  font-weight: 900;
+                  font-size: large;
+                  text-align: left;
+                  margin-top: 30px;
+                  margin-left: 10px;
+                "
+              >
+                Séléctionnez un horaire
+              </p>
+              <!---->
+              <ul
+                class="hour-list"
+                [ngClass]="{ 'background-list': isEmployeSelected }"
+              >
+                <li
+                  *ngFor="let horaire of horaires"
+                  [class.selected]="selectedHoraire === horaire"
+                  (click)="selectHoraire(horaire)"
+                >
+                  {{ horaire }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" style="margin-top: 30px; text-align: left">
+          <div class="sousPrestation">
+            <p style="font-weight: 900; font-size: large">Mon panier</p>
+            <ul class="sous-prestations-list">
+              <li
+                *ngFor="let sousPrestation of selectedSousPrestations"
+                class="sous-prestations-item"
+              >
+                <p style="font-weight: bolder">
+                  {{ sousPrestation.libelle_detail }}
+                </p>
+                <!-- Ajoutez ici d'autres détails de sous-prestation à afficher -->
+                <p class="delai" style="font-weight: 500">
+                  <span style="font-weight: bold">-</span
+                  >{{ convertMinutesToHours(sousPrestation.delai_detail) }}
+                </p>
+                <p class="prix">
+                  <span style="font-weight: bold">-</span
+                  >{{ sousPrestation.prix_detail }} Ariary
+                </p>
+                <button
+                  (click)="removeFirstFromCart()"
+                  style="
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    margin-left: 250px;
+                    margin-bottom: 0px;
+                  "
+                >
+                  <span style="color: red; font-weight: bolder"
+                    ><img
+                      src="../../assets/images/Supprimer.png"
+                      alt="Icone"
+                      style="height: 25px; width: 25px"
+                  /></span>
+                  <!-- Icône pour supprimer la prestation -->
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <a
+              class="ajouterpanier"
+              style="color: #fa5f55; text-decoration: none; font-weight: 800"
+              routerLink="/prestation"
+            >
+              <img
+                src="../../assets/images/Plus.png"
+                alt="Icone"
+                style="vertical-align: middle; height: 25px; width: 25px"
+              />
+              Ajouter un autre service chez Saw & Me
+            </a>
+          </div>
+
+          <div class="Total" style="margin-top: 30px">
+            <h2>Total : {{ getTotalPrice() }} Ariary</h2>
+          </div>
+          <button type="button" (click)="confirmRdv()">
+            Confirmer le rendez-vous
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>

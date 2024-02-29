@@ -1,0 +1,26 @@
+.appointment-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr.hovered {
+    background-color: #f5f5f5;
+    padding: 5px;
+}
+
+.star {
+    color: gray;
+    /* Couleur des étoiles non mises en évidence */
+}
+
+.highlight {
+    color: lightgreen;
+    /* Couleur des étoiles mises en évidence */
+}

@@ -1,0 +1,105 @@
+.card-container{
+    background-color:#FAFAFA;
+    margin-left: 270px;
+    margin-right: 270px;
+
+}
+.custom-select {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-select select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 12px 30px 12px 10px;
+    /* Ajustez le padding selon vos préférences */
+    font-size: 16px;
+    /* Ajustez la taille de la police selon vos préférences */
+    border: 2px solid black;
+    /* Bordure */
+    border-radius: 10px;
+    /* Border radius */
+    background-color: white;
+    /* Couleur de fond */
+   
+    cursor: pointer;
+    width: 300px;
+    /* Largeur du select */
+    height: 50px;
+    /* Hauteur du select */
+}
+
+/* Style lorsque survolé */
+.custom-select select:hover {
+    border-color: #999;
+}
+
+/* Style lorsque focus */
+.custom-select select:focus {
+    border-color: #666;
+    outline: none;
+}
+
+/* Style de l'icône */
+.select-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    /* Ajustez selon l'espace requis pour l'icône */
+    transform: translateY(-50%);
+}
+
+/* Style du placeholder */
+option[value=""] {
+    color: #999;
+    /* Couleur du placeholder */
+}
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day {
+    width: 14.28%;
+    /* 100% / 7 days */
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.sous-prestations-list {
+    list-style: none;
+    padding: 0;
+}
+
+.sous-prestations-item {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+}
+
+.sous-prestation-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.selected {
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+.hour-list {
+    background-color: white;
+    height: 200px;
+    width: 200px;
+    overflow-y: auto;
+    /* Ajoute un scroll vertical si nécessaire */
+    margin-left: 160px;
+}
+
+.hour-list li {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding: 5px;
+    /* Ajoute un peu d'espace autour du texte */
+}

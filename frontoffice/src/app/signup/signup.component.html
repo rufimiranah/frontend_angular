@@ -1,0 +1,97 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Slab:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+  <div class="row">
+    <div
+      class="login col-md-6 d-flex flex-column justify-content-center align-items-center"
+    >
+      <img
+        style="width: 250px; height: 250px"
+        src="../../assets/images/logo.png"
+      />
+      <div class="mt-4">
+        <h5 style="font-weight: bold">Inscrivez-vous</h5>
+      </div>
+      <form #signupForm="ngForm" (ngSubmit)="signUp(signupForm)">
+        <div class="nom mt-3">
+          <p style="font-family: lato">
+            Nom <span style="color: red"> * </span>
+          </p>
+          <input
+            type="text"
+            name="name"
+            ngModel
+            placeholder="Nom"
+            aria-p="Nom"
+            style="font-family: lato"
+            required
+          />
+        </div>
+        <div class="prenom mt-3">
+          <p style="font-family: lato">
+            Sexe<span style="color: red"> * </span>
+          </p>
+          <input
+            type="text"
+            name="sexe"
+            ngModel
+            placeholder="Sexe"
+            aria-p="Sexe"
+            style="font-family: lato"
+            required
+          />
+        </div>
+        <div class="mail mt-3">
+          <p style="font-family: lato">
+            Email <span style="color: red"> * </span>
+          </p>
+          <input
+            type="text"
+            name="mail"
+            ngModel
+            placeholder="Email"
+            aria-p="Email"
+            style="font-family: lato"
+            required
+          />
+        </div>
+        <div class="mdp mt-3">
+          <p style="font-family: lato">
+            Mot de passe <span style="color: red"> * </span>
+          </p>
+          <input
+            type="password"
+            name="mdp"
+            ngModel
+            placeholder="Mot de passe"
+            aria-p="Mot de passe"
+            style="font-family: lato"
+            required
+            required
+          />
+        </div>
+
+        <input type="submit" class="connecter" value="S'inscrire" />
+      </form>
+    </div>
+    <div class="col-md-6">
+      <img src="../../assets/images/vernis.png" />
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer">
+      <p>
+        Copyright: RAHAJASON Aroniaina Saotra & RAZAKAMBOLOLONA Mirantsoa
+        Rufinah
+      </p>
+    </div>
+  </div>
+</body>

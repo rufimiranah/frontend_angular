@@ -1,0 +1,22 @@
+<div>
+    <h1>Validation des rendez-vous</h1>
+    <div *ngFor="let prestation of prestations">
+        <p>{{ prestation.nom }} - {{ prestation.description }}</p>
+    </div>
+
+    <label for="employeSelect">Choisir un employé :</label>
+    <select id="employeSelect" name="employe" [(ngModel)]="employeSelectionne">
+        <option *ngFor="let employe of employes" [value]="employe.id">{{ employe.nom }}</option>
+    </select>
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choisir une date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <div class="custom-datepicker">
+        <input type="date" [(ngModel)]="dateSelectionnee" />
+    </div>
+
+    <button (click)="validerRendezVous()">Valider le rendez-vous</button>
+</div>

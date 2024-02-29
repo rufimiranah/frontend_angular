@@ -1,0 +1,96 @@
+.row{
+    background-color: rgb(242, 242,242),
+}
+.mail,
+.mdp {
+    display: flex; // Pour aligner les éléments sur la même ligne
+    flex-direction: column; // Pour empiler les éléments verticalement
+    align-items: flex-start; // Aligner les éléments à gauche
+    margin-top: 3rem; // Marge supérieure
+}
+
+input[type="text"],
+input[type="password"] {
+    border: 1px solid #ccc; // Couleur de la bordure par défaut
+    border-radius: 8px; // Bordure arrondie
+    padding: 10px; // Espacement interne
+    transition: border-color 0.3s; // Transition pour changer la couleur de la bordure lorsqu'on clique
+    width: 450px; // Largeur des champs de saisie
+        height: 40px; // Hauteur des champs de saisie
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: black; // Couleur de la bordure lorsqu'on clique
+}
+
+label {
+    margin-bottom: 0.5rem; // Marge inférieure pour les étiquettes
+    font-weight: bold; // Gras pour les étiquettes
+}
+.no-margin {
+    margin-top: 0 !important;
+}
+.connecter {
+    margin-top: 30px;
+    border: 2px solid black;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    /* Changer la couleur du texte en blanc */
+    background-color: black;
+    /* Changer la couleur de fond en noir */
+    border-radius: 8px;
+        /* Bordure arrondie */
+        width: 450px;
+        /* Largeur */
+        height: 40px;
+        /* Hauteur */
+}
+
+.connecter:hover {
+    background-color: white;
+    /* Changer la couleur de fond au survol en blanc */
+    color: black;
+    /* Changer la couleur du texte au survol en noir */
+}
+.inscription{
+    margin-top: 30px;
+        border: 2px solid white;
+        font-weight: bold;
+        padding: 5px 10px;
+        text-decoration: none;
+        color: black;
+        /* Changer la couleur du texte en blanc */
+        background-color: white;
+        /* Changer la couleur de fond en noir */
+        border-radius: 8px;
+        /* Bordure arrondie */
+        width: 450px;
+        /* Largeur */
+        height: 40px;
+        /* Hauteur */
+
+}
+.inscription:hover {
+    
+            background-color: black;
+            /* Changer la couleur de fond au survol en blanc */
+            color: white;
+            /* Changer la couleur du texte au survol en noir */
+        
+}
+.footer {
+    background-color: #FDE4E1;
+    /* Définir la couleur de fond */
+    padding: 20px;
+    /* Ajouter un peu de marge intérieure pour l'espace autour du texte */
+}
+
+.footer p {
+    margin: 0;
+    /* Supprimer les marges par défaut du paragraphe */
+    text-align: center;
+    /* Centrer le texte horizontalement */
+}

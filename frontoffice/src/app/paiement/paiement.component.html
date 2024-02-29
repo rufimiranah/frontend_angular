@@ -1,0 +1,85 @@
+<app-navbar></app-navbar>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Slab:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="paycontainer">
+    <form (ngSubmit)="submitPayment()">
+      <div class="row">
+        <div class="col-md-6">
+          <div
+            class="card"
+            style="border-radius: 15px; border: 1px solid black; padding: 20px"
+          >
+            <h2>Vos données pour le paiement</h2>
+            <p>Pour l'instant, nous avons que le paiement par carte</p>
+
+            <p style="font-weight: bold">
+              Votre card code<span style="color: red"> * </span>
+            </p>
+            <input
+              type="text"
+              name="cardcode"
+              [(ngModel)]="cardCode"
+              placeholder="Cardcode"
+              aria-p="Cardcode"
+              style="font-weight: bold; margin-left: 275px"
+              required
+            />
+            <h2>Vos données pour le paiement</h2>
+            <p>Veuillez choisir votre méthode de paiement :</p>
+
+            <label>
+              <input type="radio" name="paymentMethod" value="card" />
+              <img
+                src="../../assets/images/Mastercard-logo.svg.png"
+                alt="Paiement par carte bancaire"
+                style="height: 60px; width: 70px"
+              />
+            </label>
+            <br />
+            <label>
+              <input type="radio" name="paymentMethod" value="paypal" />
+              <img
+                src="../../assets/images/Paypal_2014_logo.png"
+                alt="Paiement par PayPal"
+                style="height: 60px; width: 70px"
+              />
+            </label>
+            <div>
+              <button type="submit" class="black-button">
+                Soumettre le paiement
+              </button>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card" *ngIf="rdvData">
+              <div class="card">
+                <div class="card-body">
+                  <h2 class="card-title">Détails du paiement</h2>
+                  <p class="card-text">
+                    Date du rendez-vous : {{ rdvData.dateHeureRDV }}
+                  </p>
+                  <div *ngFor="let prestation of prestationDetails">
+                    <p>
+                      Nom de la prestation : {{ prestation.libelle_detail }}
+                    </p>
+                    <p>
+                      Délai de la prestation : {{ prestation.delai_detail }}
+                    </p>
+                    <p>Prix de la prestation : {{ prestation.prix_detail }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>

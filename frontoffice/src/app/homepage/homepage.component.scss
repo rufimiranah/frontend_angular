@@ -1,0 +1,155 @@
+.header {
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    padding: 0;
+    margin: 0;
+    background-image: url('../../assets/images/home.webp');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .logo {
+    margin-left: auto; /* Move logo to the right */
+    margin-right: auto; /* Move logo to the left */
+    margin-bottom: 20px; /* Add space below logo */
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+    background-color: transparent;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 10px;
+    color: black;
+  }
+  
+  
+  .nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 100px;
+  }
+  
+  .nav-list li {
+    display: inline-block;
+    margin-right: 30px; /* Adjust spacing between items */
+    margin-left: 30px;
+  }
+  
+  .nav-list li:last-child {
+    margin-right: 0; /* Remove margin from last item */
+  }
+  
+  .nav-list li a {
+    text-decoration: none;
+    color: #000000; /* Change color of navigation links */
+    font-weight: bold; /* Add font weight as needed */
+    font-size: 20px; /* Add font size as needed */
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  .nav-list li a:hover {
+    color: #ccc; /* Change color on hover */
+  }
+   .nav-list ul{
+    margin-left: 150 px;
+   }
+   .propos{
+    
+    padding-top: 50px;
+        img {
+          /* Apply styles to all images within .image-container */
+          width: 100px; /* Make the image fill its container horizontally */
+          height: auto; /* Preserve aspect ratio */
+          display: block; /* Ensure images do not have any space below them */
+          margin: 0 auto; /* Center the image horizontally within its container */
+        }
+   }
+   .row .col {
+    text-align: center; /* Center align content */
+}
+
+.image-wrapper {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 150px; /* Set a fixed height */
+}
+
+.image-caption {
+    margin-top: 10px; /* Add margin top to create space */
+    font-weight: bold; /* Make the text bold */
+}
+.image-description {
+    text-align: center; /* Center align the text */
+    margin-top: 10px; /* Add margin top to create space */
+    margin-bottom: 20px;
+    white-space: pre-line;
+}
+.no-margin {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+
+.reservation {
+    margin-top: 90px; /* Ajouter de l'espace en haut de la section .reservation */
+}
+/* Styles spécifiques pour le lien avec routerLink="/reserve" */
+.reservation a[routerLink="/reserve"] {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid black;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.reservation a[routerLink="/reserve"]:hover {
+    background-color: black;
+    color: white;
+}
+.text-description{
+    margin-top: 200px;
+    text-align: left; /* Center align the text */
+    margin-left: 200px;
+    white-space: pre-line;
+}
+.souscontact{
+    padding-top: 20px;
+}
+.icone{
+width: 50px;
+height: 50px;
+}
+.person{
+    width: 285px;
+height: 275px;
+}
+.tarif{
+    border: 2px solid black; /* Ajouter une bordure noire */
+    font-weight: bold; /* Rendre le texte en gras */
+    padding: 5px 10px; /* Ajouter un peu de marge autour du texte */
+    text-decoration: none; /* Supprimer le soulignement du lien */
+    color: black; /* Changer la couleur du texte */
+}
+.tarif:hover{
+    background-color: black; /* Changer la couleur de fond au survol */
+    color: white; /* Changer la couleur du texte au survol */
+}
+.footer {
+    background-color: #e1b5b0; /* Définir la couleur de fond */
+    padding: 20px; /* Ajouter un peu de marge intérieure pour l'espace autour du texte */
+}
+
+.footer p {
+    margin: 0; /* Supprimer les marges par défaut du paragraphe */
+    text-align: center; /* Centrer le texte horizontalement */
+}

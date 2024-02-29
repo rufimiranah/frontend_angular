@@ -1,0 +1,46 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+  />
+</head>
+<app-navbar></app-navbar>
+<body>
+  <div class="container">
+    <h1>Historiques</h1>
+    <table class="appointment-table">
+      <thead>
+        <tr>
+          <th>Date et heure</th>
+          <th>Prestation</th>
+          <th>Employé</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rdv of rdvs">
+          <td>{{ rdv.dateHeureRDV }}</td>
+          <td>{{ rdv.id_detail.libelle_detail }}</td>
+          <td>{{ rdv.id_employe.name }}</td>
+          <td>
+            <div *ngFor="let i of [0, 1, 2, 3, 4]">
+              <!-- Créez 5 étoiles -->
+              <span
+                class="star"
+                [class.highlight]="i < rdv.id_detail.note_detail"
+              >
+                &#9733;
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
